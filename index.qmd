@@ -110,7 +110,7 @@ La maquette est validée avec son client
 ::: {.fragment .fade-left}
 Pierrot va devoir monter sa cuisine :
 
-- Assembler les meubles, fixer, viser, _etc..._
+- Assembler les meubles, fixer, visser, _etc..._
 - Faire attention à ne rien casser
 :::
 
