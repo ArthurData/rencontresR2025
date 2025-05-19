@@ -6,7 +6,7 @@ format:
     theme: custom.scss
     slideNumber: false
 chalkboard: false
-author: arthurdata.github.io/rencontresR2025
+author: <a href="https://arthurdata.github.io/rencontresR2025" target="_blank">🔗 arthurdata.github.io/rencontresR2025</a>
 include-before-body: assets/ground.html
 date: last-modified
 ---
@@ -15,7 +15,7 @@ date: last-modified
 
 # Il y a deux ans...
 
-Lors des Rencontres R 2023...
+Lors des <a href="https://www.youtube.com/watch?v=iWD_cLdmLUI&t=81s" target="_blank">🔗 Rencontres R 2023...</a>
 
 ## Pierrot
 
@@ -53,9 +53,7 @@ Il devait produire une application Shiny pour un client
 
 ::: {.fragment .fade-left}
 L'importance d'une maquette pour : 
-:::
 
-::: {.fragment .fade-left}
 - La conception de sa cuisine
 - La réalisation de l'application Shiny
 :::
@@ -307,7 +305,7 @@ test_that("calculate_average fonctionne", {
   
   # Test avec un vecteur vide
   expect_equal(
-    object = calculate_average(numeric(0)), 
+    object = calculate_average(0), 
     expected = 0
   )
   
@@ -602,14 +600,14 @@ Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : `{pw
 ## Les tests End-to-End
 
 :::: {.columns}
-::: {.column width="70%"}
+::: {.column width="65%"}
 ![](assets/signature-r.png)
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 ### Simuler un utilisateur dans un navigateur 
 
-<a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 thinkr.fr/signature-r</a>
+<a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 connect.thinkr.fr/signature-r/</a>
 
 ::: {.fragment .fade-left}
 `pw::pw_init()` pour initier la structure de tests pour <span class="relevant">Playwright</span>
@@ -781,5 +779,7 @@ Et sa cuisine est parfaitement fonctionnelle !
 
 ::: {.column width="55%"}
 ### Merci
+
+<a href="https://arthurdata.github.io/rencontresR2025" target="_blank">🔗 arthurdata.github.io/rencontresR2025</a>
 :::
 ::::
