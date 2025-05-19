@@ -1,0 +1,795 @@
+---
+title: "Tester une application Shiny"
+subtitle: Méthodologie et outils pratiques
+format: 
+  thinkridentity-revealjs:
+    theme: custom.scss
+    slideNumber: true
+chalkboard: false
+author: arthurdata.github.io/rencontresR2025
+include-before-body: assets/ground.html
+date: last-modified
+---
+
+# Bonjour
+
+# Il y a deux ans...
+
+Lors des Rencontres R 2023...
+
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+::: {.fragment .fade-right}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### Rencontre de Pierrot
+:::
+
+::: {.fragment .fade-left}
+Il voulait refaire sa cuisine
+:::
+
+::: {.fragment .fade-left}
+Il devait produire une application Shiny pour un client
+:::
+:::
+::::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### Il avait alors eu une <span class="relevant">révélation</span>
+:::
+
+::: {.fragment .fade-left}
+L'importance d'une maquette pour : 
+:::
+
+::: {.fragment .fade-left}
+- La conception de sa cuisine
+- La réalisation de l'application Shiny
+:::
+:::
+::::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### 2 ans après... la suite
+:::
+
+::: {.fragment .fade-left}
+Suite à sa visite dans cette grande enseigne suédoise :
+:::
+
+::: {.fragment .fade-left}
+- Il a tout acheté : les meubles, les outils, _etc..._
+:::
+
+::: {.fragment .fade-left}
+La maquette est validée avec son client
+:::
+
+::: {.fragment .fade-left}
+- Il est prêt à se lancer dans le dev
+:::
+:::
+::::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### Voici venu le temps de la <span class="relevant">production</span>
+:::
+
+::: {.fragment .fade-left}
+Pierrot va devoir monter sa cuisine :
+
+- Assembler les meubles, fixer, viser, _etc..._
+- Faire attention à ne rien casser
+:::
+
+::: {.fragment .fade-left}
+Et surtout :
+:::
+
+::: {.fragment .fade-left}
+S'assurer une qualité de montage suffisante pour les années à venir
+:::
+:::
+::::
+
+# Il y a le plan de la maquette ...
+
+# ... et la réalisation
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+### Les craintes de Pierrot...
+
+::: {.fragment .fade-left}
+- Une cuisine mal montée,
+- Une cuisine pas robuste,
+- _etc..._
+:::
+:::
+::::
+
+## Les craintes de Pierrot... 
+
+::: {.r-stack}
+![](assets/failed1.webp){.fragment width="650" height="600"}
+
+![](assets/failed2.webp){.fragment width="650" height="600"}
+
+![](assets/failed3.webp){.fragment width="650" height="600"}
+:::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+### Que Pierrot soit rassuré
+
+::: {.fragment .fade-left}
+Le vendeur lui assure que  :
+
+- **Le matériel est testé** : les vis, les placards, _etc..._ sont soumis à des tests de charge
+
+- **L'outil de conception** montre les erreurs éventuelles
+:::
+:::
+::::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+::: {.fragment .fade-right}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### C'est une nouvelle <span class="relevant">révélation</span>
+:::
+
+::: {.fragment .fade-left}
+Et si Pierrot utilisait des tests pour l'application Shiny de son client ?
+:::
+:::
+::::
+
+## Pierrot
+
+:::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+### Pierrot est convaincu
+
+Faire des tests pour son application Shiny va lui permettre de : 
+
+::: {.fragment .fade-left}
+- Valider progressivement avec son client, les étapes de développement
+
+- S'assurer de ne rien casser en modifiant et/ou en ajoutant du code
+
+- Augmenter la robustesse de l'application
+:::
+:::
+::::
+
+# Les tests dans Shiny
+
+# Les tests unitaires
+
+_Comment s'assurer que chaque tiroir s'ouvre <br> correctement avant de l'installer dans la cuisine..._
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/unit_tests.png)
+:::
+
+::: {.column width="55%"}
+### Tester un tiroir individuellement
+
+Comme vérifier qu'un tiroir s'ouvre et se ferme correctement, les tests unitaires dans Shiny permettent de :
+
+::: {.fragment .fade-left}
+- Vérifier qu'une fonction retourne la bonne valeur
+- S'assurer que les erreurs sont correctement gérées
+- Tester le comportement d'une fonction avec différents inputs
+:::
+:::
+::::
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/testunitaire.png)
+:::
+
+::: {.column width="55%"}
+### Tester un tiroir individuellement
+
+Pierrot va tester les différentes sorties d’une fonction, de manière indépendante des autres fonctions.
+:::
+::::
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/testunitaire.png)
+:::
+
+::: {.column width="55%"}
+### La bonne nouvelle
+
+Pierrot a suivi le tutoriel des <span class="relevant">#RR25</span> de lundi matin sur `{Golem}` ! 
+
+Son application Shiny est donc un <span class="relevant">package</span>, ce qui va faciliter la création des tests unitaires.
+:::
+::::
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+```
+myShinyApp/
+├── DESCRIPTION
+├── NAMESPACE
+├── app.R
+├── R/
+│   ├── app_ui.R
+│   ├── app_server.R
+│   └── run_app.R
+├── tests/
+│   ├── testthat/
+│   │   ├── test-calculate_average.R
+│   │   ├── test-golem-recommended.R
+│   │   └── ...
+│   └── testthat.R
+```
+:::
+
+::: {.column width="55%"}
+### Créer la structure de tests
+
+Pour créer la structure de tests, Pierrot peut exécuter : 
+
+- `golem::use_recommended_tests()`
+
+- `usethis::use_test("calculate_average")`
+:::
+::::
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+calculate_average <- function(values) {
+  if (!is.numeric(values)) {
+    stop("values doit être numérique")
+  }
+  if (length(values) == 0) {
+    return(0)
+  }
+  sum(values) / length(values)
+}
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+test_that("calculate_average fonctionne", {
+  # Test avec des valeurs numériques
+  expect_equal(
+    object = calculate_average(c(10, 20, 30)), 
+    expected = 20
+  )
+  
+  # Test avec un vecteur vide
+  expect_equal(
+    object = calculate_average(numeric(0)), 
+    expected = 0
+  )
+  
+  # Test avec input non-numérique
+  expect_error(
+    object = calculate_average(c("a", "b")), 
+    "values doit être numérique"
+  )
+})
+```
+:::
+::::
+
+## Les tests unitaires
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/result_tests.png)
+:::
+
+::: {.column width="55%"}
+### Un premier pas
+
+Ici, Pierrot vient tester une fonction dans son application. 
+
+::: {.fragment .fade-left}
+En revanche, il ne vient pas tester directement son application, les intéractions, _etc..._
+:::
+
+::: {.fragment .fade-left}
+Mais il vient de <span class="relevant">sécuriser la logique métier derrière son application</span>. 
+:::
+:::
+::::
+
+# Les tests d'intégration
+
+_Les meubles de cuisine sont testés individuellement, <br> mais comment savoir s'ils fonctionneront ensemble ?_
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/inte_tests.png)
+:::
+
+::: {.column width="55%"}
+### Assembler les meubles entre eux
+
+Comme vérifier que la porte du frigo ne butte pas contre le mur, les tests d'intégration permettent de :
+
+::: {.fragment .fade-left}
+- Tester l'emboitement des fonctions
+
+- S'assurer que les modules Shiny réagissent correctement
+
+- Vérifier le bon fonctionnement des flux réactifs
+:::
+:::
+::::
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+\ 
+
+\ 
+
+![](assets/test_usage.png)
+:::
+
+::: {.column width="55%"}
+### Assembler les meubles entre eux
+
+À la différence des tests unitaires, Pierrot va tester les interactions entre les fonctions.
+:::
+::::
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+app_ui <- function(request) {
+  fluidPage(
+    numericInput(
+      inputId = "num1",
+      label = "Premiere valeur",
+      value = 10
+    ),
+    numericInput(
+      inputId = "num2",
+      label = "Seconde valeur",
+      value = 10
+    ),
+    ...
+    actionButton(
+      inputId = "go",
+      label = "Calculer !"
+    )
+  )
+}
+```
+:::
+
+::: {.column width="55%"}
+![](assets/app_inte.png){width=80%}
+:::
+::::
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+app_ui <- function(request) {
+  fluidPage(
+    numericInput(
+      inputId = "num1",
+      label = "Premiere valeur",
+      value = 10
+    ),
+    numericInput(
+      inputId = "num2",
+      label = "Seconde valeur",
+      value = 10
+    ),
+    ...
+    actionButton(
+      inputId = "go",
+      label = "Calculer !"
+    )
+  )
+}
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+app_server <- function(input, output, session) {
+
+  rv <- reactiveValues()
+
+  observeEvent(input$go, {
+    rv$avg <- calculate_average(
+      values = c(
+        input$num1,
+        input$num2,
+        input$num3,
+        input$num4
+      )
+    )
+  })
+}
+```
+:::
+::::
+
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+testServer(app_server, {
+  session$setInputs(num1 = 5)
+  session$setInputs(num2 = 5)
+  session$setInputs(num3 = 5)
+  session$setInputs(num4 = 5)
+  session$setInputs(go = 1)
+
+  expect_equal(
+    object = rv$avg, 
+    expected = 5
+  )
+
+  session$setInputs(num1 = 10)
+  session$setInputs(num2 = 20)
+  session$setInputs(num3 = 30)
+  session$setInputs(num4 = 12)
+  session$setInputs(go = 2)
+
+  expect_equal(
+    object = rv$avg,
+    expected = 18
+  )
+})
+
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+app_server <- function(input, output, session) {
+
+  rv <- reactiveValues()
+
+  observeEvent(input$go, {
+    rv$avg <- calculate_average(
+      values = c(
+        input$num1,
+        input$num2,
+        input$num3,
+        input$num4
+      )
+    )
+  })
+}
+```
+:::
+::::
+
+## Les tests d'intégration
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/result_tests2.png)
+:::
+
+::: {.column width="55%"}
+### Un second pas
+
+Ici, Pierrot vient de tester les imbrications dans son application et notamment des interactions.
+
+::: {.fragment .fade-left}
+Il vient de <span class="relevant">sécuriser le bon fonctionnement de son application</span>.
+:::
+
+::: {.fragment .fade-left}
+En revanche, ces tests restent "_programmatique_" et ils ne simulent pas un vrai navigateur/utilisateur.
+:::
+:::
+::::
+
+# Les tests End-to-End
+
+_Nos meubles s'assemblent bien en théorie, <br>mais comment savoir si la cuisine sera vraiment utilisable par Pierrot ?_
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/e2e_tests.png)
+:::
+
+::: {.column width="55%"}
+### Cuisiner un vrai repas
+
+Comme cuisiner réellement dans la cuisine pour s'assurer que tout est fonctionnel, les tests end-to-end permettent de :
+
+::: {.fragment .fade-left}
+- Simuler de vraies interactions utilisateur
+
+- Tester l'application dans un vrai navigateur
+
+- Vérifier l'expérience utilisateur complète
+:::
+:::
+::::
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/e2e_tests.png)
+:::
+
+::: {.column width="55%"}
+### Simuler un utilisateur dans un navigateur
+
+Pour tester l'application dans un vrai navigateur, Pierrot va utiliser la librairie JS <span class="relevant">Playwright</span>.
+
+::: {.fragment .fade-left}
+Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : <span class="relevant">[`{pw}`](https://github.com/ThinkR-open/pw)</span>
+:::
+:::
+::::
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="70%"}
+![](assets/signature-r.png)
+:::
+
+::: {.column width="30%"}
+### Simuler un utilisateur dans un navigateur 
+
+<a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 `{signature.r}`</a>
+:::
+::::
+
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="70%"}
+![](assets/tests_e2e.gif)
+:::
+
+::: {.column width="30%"}
+### Simuler un utilisateur dans un navigateur
+
+Ca va très vite ... mais Playwright lance dans un navigateur l'application et simule un comportement utilisateur.
+
+Fonctionne pour plusieurs navigateurs : Chromium, Firefix et Webkit.
+:::
+::::
+
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="70%"}
+![](assets/tests_e2e-2.gif)
+:::
+
+::: {.column width="30%"}
+### Simuler un utilisateur dans un navigateur
+
+On peut ralentir les tests en mode "_trace_"
+:::
+::::
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="70%"}
+```{js}
+#| eval: false
+import { test, expect } from '@playwright/test';
+
+test('Fill signature is working', async ({ page }) => {
+  await page.goto('http://localhost:3000/');
+  await expect(page.getByTestId("appName")).toBeVisible();
+
+  await expect(page.getByTestId('firstname')).toBeVisible();
+  await expect(page.getByPlaceholder('John')).toBeEmpty();
+  await page.getByPlaceholder('John').click();
+  await page.getByPlaceholder('John').fill('Arthur');
+  await expect(page.getByTestId('signature-names')).toMatchAriaSnapshot(`- 'cell "Arthur {{lastname}}"'`);
+
+  await page.getByPlaceholder('Doe').fill('Bréant');
+  await expect(page.getByTestId('signature-names')).toMatchAriaSnapshot(`- 'cell "Arthur Bréant"'`);
+
+  await page.getByRole('button', { name: 'copy fa-solid icon Copy to' }).click();
+  await expect(page.getByText('×Paste the signature in your')).toBeVisible();
+});
+```
+:::
+
+::: {.column width="30%"}
+### Simuler un utilisateur dans un navigateur
+
+Avantage : Playwright propose de générer le code automatiquement en cliquant dans l'application
+:::
+::::
+
+## Les tests End-to-End
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/result_tests3.png)
+:::
+
+::: {.column width="55%"}
+### Un dernier pas
+
+Ici, Pierrot vient de tester dans des conditions réelles son application.
+
+::: {.fragment .fade-left}
+Il vient de <span class="relevant">sécuriser le bon fonctionnement de son application, tant sur la logique métier que sur la partie UI</span>.
+:::
+
+::: {.fragment .fade-left}
+Les tests End-to-End fonctionnent également dans la CI pour assurer à Pierrot un continuité dans son développement.
+:::
+:::
+::::
+
+# Les tests unitaires
+
+_Comment s'assurer que chaque tiroir s'ouvre <br> correctement avant de l'installer dans la cuisine..._
+
+## Les tests dans Shiny
+
+:::: {.columns}
+::: {.column width="45%"}
+![](assets/e2e_tests.png)
+:::
+
+::: {.column width="55%"}
+### La cuisine parfaite de Pierrot
+
+
+::: {.fragment .fade-left}
+**Tests unitaires**
+
+- Toutes les fonctions utilitaires et métiers
+:::
+
+::: {.fragment .fade-left}
+**Tests d'intégration**
+
+- Flux réactifs principaux
+:::
+
+::: {.fragment .fade-left}
+**Tests end-to-end**
+
+- Parcours utilisateur critiques ou complexes
+:::
+:::
+::::
+
+## La cuisine de Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+::: {.fragment .fade-right}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {.fragment .fade-left}
+### Le résultat final
+
+Grâce à sa stratégie de tests à trois niveaux :
+:::
+
+::: {.fragment .fade-left}
+- Pierrot a livré une application robuste
+
+- Son client est satisfait
+
+- Les modifications futures seront plus sereines
+:::
+
+::: {.fragment .fade-left}
+Et sa cuisine est parfaitement fonctionnelle !
+:::
+:::
+::::
+
