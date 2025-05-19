@@ -24,11 +24,36 @@
   bottom: 0;
 }
 
+.sun {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #ffd9008c 55%, #ffa600b8);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 35%;
+  right: 0;
+  z-index: 0;
+  animation: sunArc 900s linear forwards;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+@keyframes sunArc {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-50vw, -30vh);
+  }
+  100% {
+    transform: translate(-100vw, 0);
+  }
+}
+
 .sponso {
   display: inline;
   font-size: 11px;
 }
-
 
 .reveal {
   .slide-logo {
