@@ -4,7 +4,7 @@ subtitle: Méthodologie et outils pratiques
 format: 
   thinkridentity-revealjs:
     theme: custom.scss
-    slideNumber: true
+    slideNumber: false
 chalkboard: false
 author: arthurdata.github.io/rencontresR2025
 include-before-body: assets/ground.html
@@ -16,7 +16,6 @@ date: last-modified
 # Il y a deux ans...
 
 Lors des Rencontres R 2023...
-
 
 ## Pierrot
 
@@ -50,9 +49,7 @@ Il devait produire une application Shiny pour un client
 :::
 
 ::: {.column width="55%"}
-::: {.fragment .fade-left}
 ### Il avait alors eu une <span class="relevant">révélation</span>
-:::
 
 ::: {.fragment .fade-left}
 L'importance d'une maquette pour : 
@@ -73,23 +70,17 @@ L'importance d'une maquette pour :
 :::
 
 ::: {.column width="55%"}
-::: {.fragment .fade-left}
 ### 2 ans après... la suite
-:::
 
 ::: {.fragment .fade-left}
 Suite à sa visite dans cette grande enseigne suédoise :
-:::
 
-::: {.fragment .fade-left}
 - Il a tout acheté : les meubles, les outils, _etc..._
 :::
 
 ::: {.fragment .fade-left}
-La maquette est validée avec son client
-:::
+La maquette est validée avec son client :
 
-::: {.fragment .fade-left}
 - Il est prêt à se lancer dans le dev
 :::
 :::
@@ -103,9 +94,7 @@ La maquette est validée avec son client
 :::
 
 ::: {.column width="55%"}
-::: {.fragment .fade-left}
 ### Voici venu le temps de la <span class="relevant">production</span>
-:::
 
 ::: {.fragment .fade-left}
 Pierrot va devoir monter sa cuisine :
@@ -137,11 +126,9 @@ S'assurer une qualité de montage suffisante pour les années à venir
 ::: {.column width="75%"}
 ### Les craintes de Pierrot...
 
-::: {.fragment .fade-left}
 - Une cuisine mal montée,
 - Une cuisine pas robuste,
 - _etc..._
-:::
 :::
 ::::
 
@@ -164,13 +151,11 @@ S'assurer une qualité de montage suffisante pour les années à venir
 ::: {.column width="75%"}
 ### Que Pierrot soit rassuré
 
-::: {.fragment .fade-left}
 Le vendeur lui assure que  :
 
 - **Le matériel est testé** : les vis, les placards, _etc..._ sont soumis à des tests de charge
 
 - **L'outil de conception** montre les erreurs éventuelles
-:::
 :::
 ::::
 
@@ -178,40 +163,26 @@ Le vendeur lui assure que  :
 
 :::: {.columns}
 ::: {.column width="45%"}
-::: {.fragment .fade-right}
 {{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
-:::
 :::
 
 ::: {.column width="55%"}
-::: {.fragment .fade-left}
 ### C'est une nouvelle <span class="relevant">révélation</span>
-:::
 
 ::: {.fragment .fade-left}
 Et si Pierrot utilisait des tests pour l'application Shiny de son client ?
 :::
-:::
-::::
-
-## Pierrot
-
-:::: {.columns}
-::: {.column width="25%"}
-:::
-
-::: {.column width="75%"}
-### Pierrot est convaincu
-
-Faire des tests pour son application Shiny va lui permettre de : 
 
 ::: {.fragment .fade-left}
-- Valider progressivement avec son client, les étapes de développement
+Faire des tests dans son application Shiny va lui permettre de : 
+
+- Valider progressivement son code
 
 - S'assurer de ne rien casser en modifiant et/ou en ajoutant du code
 
 - Augmenter la robustesse de l'application
 :::
+
 :::
 ::::
 
@@ -621,7 +592,9 @@ Comme cuisiner réellement dans la cuisine pour s'assurer que tout est fonctionn
 Pour tester l'application dans un vrai navigateur, Pierrot va utiliser la librairie JS <span class="relevant">Playwright</span>.
 
 ::: {.fragment .fade-left}
-Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : <span class="relevant">[`{pw}`](https://github.com/ThinkR-open/pw)</span>
+Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : `{pw}`
+
+<a href="https://github.com/ThinkR-open/pw" target="_blank">🔗 github.com/ThinkR-open/pw</a>
 :::
 :::
 ::::
@@ -636,7 +609,13 @@ Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : <spa
 ::: {.column width="30%"}
 ### Simuler un utilisateur dans un navigateur 
 
-<a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 `{signature.r}`</a>
+<a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 thinkr.fr/signature-r</a>
+
+::: {.fragment .fade-left}
+`pw::pw_init()` pour initier la structure de tests pour <span class="relevant">Playwright</span>
+
+Puis `devtools::test()` comme précédemment
+:::
 :::
 ::::
 
@@ -708,6 +687,10 @@ Avantage : Playwright propose de générer le code automatiquement en cliquant d
 
 ## Les tests End-to-End
 
+![](assets/e2e_generator.gif){width="100%"}
+
+## Les tests End-to-End
+
 :::: {.columns}
 ::: {.column width="45%"}
 ![](assets/result_tests3.png)
@@ -727,10 +710,6 @@ Les tests End-to-End fonctionnent également dans la CI pour assurer à Pierrot 
 :::
 :::
 ::::
-
-# Les tests unitaires
-
-_Comment s'assurer que chaque tiroir s'ouvre <br> correctement avant de l'installer dans la cuisine..._
 
 ## Les tests dans Shiny
 
@@ -793,3 +772,14 @@ Et sa cuisine est parfaitement fonctionnelle !
 :::
 ::::
 
+## La cuisine de Pierrot
+
+:::: {.columns}
+::: {.column width="45%"}
+{{< quarto-lottie src=https://lottie.host/5f2ed099-4737-471d-a199-96b7786d7c88/JhebxcrsLV.json >}}
+:::
+
+::: {.column width="55%"}
+### Merci
+:::
+::::
