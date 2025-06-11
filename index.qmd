@@ -1,23 +1,31 @@
 ---
-title: "Tester une application Shiny"
-subtitle: Méthodologie et outils pratiques
+title: <span data-i18n-key="title"></span>
+subtitle: <span data-i18n-key="subtitle"></span>
 format: 
   thinkridentity-revealjs:
+    footer: |
+      {{< i18n-select choices="fr:Français, en:English" selected="fr" >}}
     theme: custom.scss
     slideNumber: false
+    i18n:
+      defaultLocale: "fr"
+      dictionaryPath:
+        translations.yml
 chalkboard: false
 author: <a href="https://arthurdata.github.io/rencontresR2025" target="_blank">🔗 arthurdata.github.io/rencontresR2025</a>
 include-before-body: assets/ground.html
 date: last-modified
+revealjs-plugins:
+  - i18n
 ---
 
-# Bonjour
+# {{< i18n-key "hello" >}}
 
-# Il y a deux ans...
+# {{< i18n-key "twoyearsago" >}}
 
-Lors des <a href="https://www.youtube.com/watch?v=iWD_cLdmLUI&t=81s" target="_blank">🔗 Rencontres R 2023...</a>
+{{< i18n-key "during_r_meetings" >}} <a href="https://www.youtube.com/watch?v=iWD_cLdmLUI&t=81s" target="_blank">🔗 Rencontres R 2023...</a>
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -28,20 +36,20 @@ Lors des <a href="https://www.youtube.com/watch?v=iWD_cLdmLUI&t=81s" target="_bl
 
 ::: {.column width="55%"}
 ::: {.fragment .fade-left}
-### Rencontre de Pierrot
+### {{< i18n-key "meeting_pierrot" >}}
 :::
 
 ::: {.fragment .fade-left}
-Il voulait refaire sa cuisine
+{{< i18n-key "wanted_kitchen" >}}
 :::
 
 ::: {.fragment .fade-left}
-Il devait produire une application Shiny pour un client
+{{< i18n-key "shiny_for_client" >}}
 :::
 :::
 ::::
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -49,18 +57,18 @@ Il devait produire une application Shiny pour un client
 :::
 
 ::: {.column width="55%"}
-### Il avait alors eu une <span class="relevant">révélation</span>
+### {{< i18n-key "revelation" >}}
 
 ::: {.fragment .fade-left}
-L'importance d'une maquette pour : 
+{{< i18n-key "importance_mockup" >}} 
 
-- La conception de sa cuisine
-- La réalisation de l'application Shiny
+- {{< i18n-key "kitchen_design" >}}
+- {{< i18n-key "shiny_realization" >}}
 :::
 :::
 ::::
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -68,23 +76,23 @@ L'importance d'une maquette pour :
 :::
 
 ::: {.column width="55%"}
-### 2 ans après... la suite
+### {{< i18n-key "two_years_later" >}}
 
 ::: {.fragment .fade-left}
-Suite à sa visite dans cette grande enseigne suédoise :
+{{< i18n-key "swedish_store" >}}
 
-- Il a tout acheté : les meubles, les outils, _etc..._
+{{< i18n-key "bought_everything" >}}
 :::
 
 ::: {.fragment .fade-left}
-La maquette est validée avec son client :
+{{< i18n-key "mockup_validated" >}}
 
-- Il est prêt à se lancer dans le dev
+{{< i18n-key "ready_to_dev" >}}
 :::
 :::
 ::::
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -92,45 +100,45 @@ La maquette est validée avec son client :
 :::
 
 ::: {.column width="55%"}
-### Voici venu le temps de la <span class="relevant">production</span>
+### {{< i18n-key "production_time" >}}
 
 ::: {.fragment .fade-left}
-Pierrot va devoir monter sa cuisine :
+{{< i18n-key "assemble_kitchen" >}}
 
-- Assembler les meubles, fixer, visser, _etc..._
-- Faire attention à ne rien casser
+- {{< i18n-key "assemble_furniture" >}}
+- {{< i18n-key "be_careful" >}}
 :::
 
 ::: {.fragment .fade-left}
-Et surtout :
+{{< i18n-key "and_especially" >}}
 :::
 
 ::: {.fragment .fade-left}
-S'assurer une qualité de montage suffisante pour les années à venir
+{{< i18n-key "quality_assurance" >}}
 :::
 :::
 ::::
 
-# Il y a le plan de la maquette ...
+# {{< i18n-key "mockup_plan" >}}
 
-# ... et la réalisation
+# {{< i18n-key "and_realization" >}}
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="25%"}
 :::
 
 ::: {.column width="75%"}
-### Les craintes de Pierrot...
+### {{< i18n-key "pierrot_fears_title" >}}
 
-- Une cuisine mal montée,
-- Une cuisine pas robuste,
-- _etc..._
+- {{< i18n-key "poorly_assembled" >}}
+- {{< i18n-key "not_robust" >}}
+- {{< i18n-key "etc" >}}
 :::
 ::::
 
-## Les craintes de Pierrot... 
+## {{< i18n-key "pierrot_fears_title" >}}
 
 ::: {.r-stack}
 ![](assets/failed1.webp){.fragment width="650" height="600"}
@@ -140,24 +148,24 @@ S'assurer une qualité de montage suffisante pour les années à venir
 ![](assets/failed3.webp){.fragment width="650" height="600"}
 :::
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="25%"}
 :::
 
 ::: {.column width="75%"}
-### Que Pierrot soit rassuré
+### {{< i18n-key "reassured" >}}
 
-Le vendeur lui assure que  :
+{{< i18n-key "seller_assures" >}}
 
-- **Le matériel est testé** : les vis, les placards, _etc..._ sont soumis à des tests de charge
+- {{< i18n-key "material_tested" >}}
 
-- **L'outil de conception** montre les erreurs éventuelles
+- {{< i18n-key "design_tool" >}}
 :::
 ::::
 
-## Pierrot
+## {{< i18n-key "pierrot_title" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -165,32 +173,32 @@ Le vendeur lui assure que  :
 :::
 
 ::: {.column width="55%"}
-### C'est une nouvelle <span class="relevant">révélation</span>
+### {{< i18n-key "new_revelation" >}}
 
 ::: {.fragment .fade-left}
-Et si Pierrot utilisait des tests pour l'application Shiny de son client ?
+{{< i18n-key "what_if_tests" >}}
 :::
 
 ::: {.fragment .fade-left}
-Faire des tests dans son application Shiny va lui permettre de : 
+{{< i18n-key "tests_allow" >}}
 
-- Valider progressivement son code
+- {{< i18n-key "validate_progressively" >}}
 
-- S'assurer de ne rien casser en modifiant et/ou en ajoutant du code
+- {{< i18n-key "ensure_no_breaks" >}}
 
-- Augmenter la robustesse de l'application
+- {{< i18n-key "increase_robustness" >}}
 :::
 
 :::
 ::::
 
-# Les tests dans Shiny
+# {{< i18n-key "tests_in_shiny" >}}
 
-# Les tests unitaires
+# {{< i18n-key "unit_tests" >}}
 
-_Comment s'assurer que chaque tiroir s'ouvre <br> correctement avant de l'installer dans la cuisine..._
+_{{< i18n-key "unit_tests_subtitle" >}}_
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -198,19 +206,19 @@ _Comment s'assurer que chaque tiroir s'ouvre <br> correctement avant de l'instal
 :::
 
 ::: {.column width="55%"}
-### Tester un tiroir individuellement
+### {{< i18n-key "test_drawer" >}}
 
-Comme vérifier qu'un tiroir s'ouvre et se ferme correctement, les tests unitaires dans Shiny permettent de :
+{{< i18n-key "unit_tests_description" >}}
 
 ::: {.fragment .fade-left}
-- Vérifier qu'une fonction retourne la bonne valeur
-- S'assurer que les erreurs sont correctement gérées
-- Tester le comportement d'une fonction avec différents inputs
+- {{< i18n-key "verify_function" >}}
+- {{< i18n-key "ensure_errors" >}}
+- {{< i18n-key "test_behavior" >}}
 :::
 :::
 ::::
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -218,13 +226,13 @@ Comme vérifier qu'un tiroir s'ouvre et se ferme correctement, les tests unitair
 :::
 
 ::: {.column width="55%"}
-### Tester un tiroir individuellement
+### {{< i18n-key "test_drawer" >}}
 
-Pierrot va tester les différentes sorties d’une fonction, de manière indépendante des autres fonctions.
+{{< i18n-key "test_individually" >}}
 :::
 ::::
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -232,15 +240,15 @@ Pierrot va tester les différentes sorties d’une fonction, de manière indépe
 :::
 
 ::: {.column width="55%"}
-### La bonne nouvelle
+### {{< i18n-key "good_news" >}}
 
-Pierrot a suivi le tutoriel des <span class="relevant">#RR25</span> de lundi matin sur `{Golem}` ! 
+{{< i18n-key "followed_tutorial" >}}
 
-Son application Shiny est donc un <span class="relevant">package</span>, ce qui va faciliter la création des tests unitaires.
+{{< i18n-key "shiny_is_package" >}}
 :::
 ::::
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -263,9 +271,9 @@ myShinyApp/
 :::
 
 ::: {.column width="55%"}
-### Créer la structure de tests
+### {{< i18n-key "create_test_structure" >}}
 
-Pour créer la structure de tests, Pierrot peut exécuter : 
+{{< i18n-key "create_structure_text" >}}
 
 - `golem::use_recommended_tests()`
 
@@ -273,7 +281,7 @@ Pour créer la structure de tests, Pierrot peut exécuter :
 :::
 ::::
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -282,7 +290,7 @@ Pour créer la structure de tests, Pierrot peut exécuter :
 #| echo: true
 calculate_average <- function(values) {
   if (!is.numeric(values)) {
-    stop("values doit être numérique")
+    stop("values must be numeric")
   }
   if (length(values) == 0) {
     return(0)
@@ -296,30 +304,30 @@ calculate_average <- function(values) {
 ```{r}
 #| eval: false
 #| echo: true
-test_that("calculate_average fonctionne", {
-  # Test avec des valeurs numériques
+test_that("calculate_average works", {
+  # Test with numeric values
   expect_equal(
     object = calculate_average(c(10, 20, 30)), 
     expected = 20
   )
   
-  # Test avec un vecteur vide
+  # Test with empty vector
   expect_equal(
     object = calculate_average(0), 
     expected = 0
   )
   
-  # Test avec input non-numérique
+  # Test with non-numeric input
   expect_error(
     object = calculate_average(c("a", "b")), 
-    "values doit être numérique"
+    "values must be numeric"
   )
 })
 ```
 :::
 ::::
 
-## Les tests unitaires
+## {{< i18n-key "unit_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -327,25 +335,25 @@ test_that("calculate_average fonctionne", {
 :::
 
 ::: {.column width="55%"}
-### Un premier pas
+### {{< i18n-key "first_step" >}}
 
-Ici, Pierrot vient tester une fonction dans son application. 
+{{< i18n-key "first_step_text" >}}
 
 ::: {.fragment .fade-left}
-En revanche, il ne vient pas tester directement son application, les intéractions, _etc..._
+{{< i18n-key "however_not_direct" >}}
 :::
 
 ::: {.fragment .fade-left}
-Mais il vient de <span class="relevant">sécuriser la logique métier derrière son application</span>. 
+{{< i18n-key "secured_business_logic" >}}
 :::
 :::
 ::::
 
-# Les tests d'intégration
+# {{< i18n-key "integration_tests" >}}
 
-_Les meubles de cuisine sont testés individuellement, <br> mais comment savoir s'ils fonctionneront ensemble ?_
+_{{< i18n-key "integration_subtitle" >}}_
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -353,21 +361,21 @@ _Les meubles de cuisine sont testés individuellement, <br> mais comment savoir 
 :::
 
 ::: {.column width="55%"}
-### Assembler les meubles entre eux
+### {{< i18n-key "assemble_furniture_together" >}}
 
-Comme vérifier que la porte du frigo ne butte pas contre le mur, les tests d'intégration permettent de :
+{{< i18n-key "integration_description" >}}
 
 ::: {.fragment .fade-left}
-- Tester l'emboitement des fonctions
+- {{< i18n-key "test_function_integration" >}}
 
-- S'assurer que les modules Shiny réagissent correctement
+- {{< i18n-key "ensure_modules_react" >}}
 
-- Vérifier le bon fonctionnement des flux réactifs
+- {{< i18n-key "verify_reactive_flows" >}}
 :::
 :::
 ::::
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -379,13 +387,13 @@ Comme vérifier que la porte du frigo ne butte pas contre le mur, les tests d'in
 :::
 
 ::: {.column width="55%"}
-### Assembler les meubles entre eux
+### {{< i18n-key "assemble_furniture_together" >}}
 
-À la différence des tests unitaires, Pierrot va tester les interactions entre les fonctions.
+{{< i18n-key "integration_difference" >}}
 :::
 ::::
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -396,18 +404,18 @@ app_ui <- function(request) {
   fluidPage(
     numericInput(
       inputId = "num1",
-      label = "Premiere valeur",
+      label = "First value",
       value = 10
     ),
     numericInput(
       inputId = "num2",
-      label = "Seconde valeur",
+      label = "Second value",
       value = 10
     ),
     ...
     actionButton(
       inputId = "go",
-      label = "Calculer !"
+      label = "Calculate!"
     )
   )
 }
@@ -415,11 +423,11 @@ app_ui <- function(request) {
 :::
 
 ::: {.column width="55%"}
-![](assets/app_inte.png){width=80%}
+![](assets/app_inte.png){width=50%}
 :::
 ::::
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -430,18 +438,18 @@ app_ui <- function(request) {
   fluidPage(
     numericInput(
       inputId = "num1",
-      label = "Premiere valeur",
+      label = "First value",
       value = 10
     ),
     numericInput(
       inputId = "num2",
-      label = "Seconde valeur",
+      label = "Second value",
       value = 10
     ),
     ...
     actionButton(
       inputId = "go",
-      label = "Calculer !"
+      label = "Calculate!"
     )
   )
 }
@@ -472,7 +480,7 @@ app_server <- function(input, output, session) {
 ::::
 
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -529,7 +537,7 @@ app_server <- function(input, output, session) {
 :::
 ::::
 
-## Les tests d'intégration
+## {{< i18n-key "integration_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -537,25 +545,25 @@ app_server <- function(input, output, session) {
 :::
 
 ::: {.column width="55%"}
-### Un second pas
+### {{< i18n-key "second_step" >}}
 
-Ici, Pierrot vient de tester les imbrications dans son application et notamment des interactions.
+{{< i18n-key "second_step_text" >}}
 
 ::: {.fragment .fade-left}
-Il vient de <span class="relevant">sécuriser le bon fonctionnement de son application</span>.
+{{< i18n-key "secured_functioning" >}}
 :::
 
 ::: {.fragment .fade-left}
-En revanche, ces tests restent "_programmatique_" et ils ne simulent pas un vrai navigateur/utilisateur.
+{{< i18n-key "tests_remain_programmatic" >}}
 :::
 :::
 ::::
 
-# Les tests End-to-End
+# {{< i18n-key "e2e_tests" >}}
 
-_Nos meubles s'assemblent bien en théorie, <br>mais comment savoir si la cuisine sera vraiment utilisable par Pierrot ?_
+_{{< i18n-key "e2e_subtitle" >}}_
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -563,21 +571,21 @@ _Nos meubles s'assemblent bien en théorie, <br>mais comment savoir si la cuisin
 :::
 
 ::: {.column width="55%"}
-### Cuisiner un vrai repas
+### {{< i18n-key "cook_real_meal" >}}
 
-Comme cuisiner réellement dans la cuisine pour s'assurer que tout est fonctionnel, les tests end-to-end permettent de :
+{{< i18n-key "e2e_description" >}}
 
 ::: {.fragment .fade-left}
-- Simuler de vraies interactions utilisateur
+- {{< i18n-key "simulate_user_interactions" >}}
 
-- Tester l'application dans un vrai navigateur
+- {{< i18n-key "test_real_browser" >}}
 
-- Vérifier l'expérience utilisateur complète
+- {{< i18n-key "verify_complete_ux" >}}
 :::
 :::
 ::::
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -585,19 +593,19 @@ Comme cuisiner réellement dans la cuisine pour s'assurer que tout est fonctionn
 :::
 
 ::: {.column width="55%"}
-### Simuler un utilisateur dans un navigateur
+### {{< i18n-key "simulate_user_browser" >}}
 
-Pour tester l'application dans un vrai navigateur, Pierrot va utiliser la librairie JS <span class="relevant">Playwright</span>.
+{{< i18n-key "use_playwright" >}}
 
 ::: {.fragment .fade-left}
-Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : `{pw}`
+{{< i18n-key "but_r_developer" >}}
 
 <a href="https://github.com/ThinkR-open/pw" target="_blank">🔗 github.com/ThinkR-open/pw</a>
 :::
 :::
 ::::
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="65%"}
@@ -605,20 +613,20 @@ Mais Pierrot est développeur R, il va donc utiliser le nouveau package R : `{pw
 :::
 
 ::: {.column width="35%"}
-### Simuler un utilisateur dans un navigateur 
+### {{< i18n-key "simulate_user_browser" >}}
 
 <a href="https://connect.thinkr.fr/signature-r/" target="_blank">🔗 connect.thinkr.fr/signature-r/</a>
 
 ::: {.fragment .fade-left}
-`pw::pw_init()` pour initier la structure de tests pour <span class="relevant">Playwright</span>
+{{< i18n-key "pw_init" >}}
 
-Puis `devtools::test()` comme précédemment
+{{< i18n-key "then_devtools" >}}
 :::
 :::
 ::::
 
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -626,16 +634,16 @@ Puis `devtools::test()` comme précédemment
 :::
 
 ::: {.column width="30%"}
-### Simuler un utilisateur dans un navigateur
+### {{< i18n-key "simulate_user_browser" >}}
 
-Ca va très vite ... mais Playwright lance dans un navigateur l'application et simule un comportement utilisateur.
+{{< i18n-key "very_fast" >}}
 
-Fonctionne pour plusieurs navigateurs : Chromium, Firefix et Webkit.
+{{< i18n-key "multiple_browsers" >}}
 :::
 ::::
 
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -643,13 +651,13 @@ Fonctionne pour plusieurs navigateurs : Chromium, Firefix et Webkit.
 :::
 
 ::: {.column width="30%"}
-### Simuler un utilisateur dans un navigateur
+### {{< i18n-key "simulate_user_browser" >}}
 
-On peut ralentir les tests en mode "_trace_"
+{{< i18n-key "slow_down_trace" >}}
 :::
 ::::
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -677,17 +685,17 @@ test('Fill signature is working', async ({ page }) => {
 :::
 
 ::: {.column width="30%"}
-### Simuler un utilisateur dans un navigateur
+### {{< i18n-key "simulate_user_browser" >}}
 
-Avantage : Playwright propose de générer le code automatiquement en cliquant dans l'application
+{{< i18n-key "advantage_generate" >}}
 :::
 ::::
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 ![](assets/e2e_generator.gif){width="100%"}
 
-## Les tests End-to-End
+## {{< i18n-key "e2e_tests" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -695,21 +703,21 @@ Avantage : Playwright propose de générer le code automatiquement en cliquant d
 :::
 
 ::: {.column width="55%"}
-### Un dernier pas
+### {{< i18n-key "final_step" >}}
 
-Ici, Pierrot vient de tester dans des conditions réelles son application.
+{{< i18n-key "final_step_text" >}}
 
 ::: {.fragment .fade-left}
-Il vient de <span class="relevant">sécuriser le bon fonctionnement de son application, tant sur la logique métier que sur la partie UI</span>.
+{{< i18n-key "secured_complete" >}}
 :::
 
 ::: {.fragment .fade-left}
-Les tests End-to-End fonctionnent également dans la CI pour assurer à Pierrot un continuité dans son développement.
+{{< i18n-key "e2e_ci" >}}
 :::
 :::
 ::::
 
-## Les tests dans Shiny
+## {{< i18n-key "tests_in_shiny" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -717,30 +725,30 @@ Les tests End-to-End fonctionnent également dans la CI pour assurer à Pierrot 
 :::
 
 ::: {.column width="55%"}
-### La cuisine parfaite de Pierrot
+### {{< i18n-key "perfect_kitchen" >}}
 
 
 ::: {.fragment .fade-left}
-**Tests unitaires**
+**{{< i18n-key "unit_tests" >}}**
 
-- Toutes les fonctions utilitaires et métiers
+- {{< i18n-key "unit_tests_functions" >}}
 :::
 
 ::: {.fragment .fade-left}
-**Tests d'intégration**
+**{{< i18n-key "integration_tests" >}}**
 
-- Flux réactifs principaux
+- {{< i18n-key "integration_reactive_flows" >}}
 :::
 
 ::: {.fragment .fade-left}
-**Tests end-to-end**
+**{{< i18n-key "e2e_tests" >}}**
 
-- Parcours utilisateur critiques ou complexes
+- {{< i18n-key "e2e_user_journeys" >}}
 :::
 :::
 ::::
 
-## La cuisine de Pierrot
+## {{< i18n-key "pierrot_kitchen" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -751,26 +759,26 @@ Les tests End-to-End fonctionnent également dans la CI pour assurer à Pierrot 
 
 ::: {.column width="55%"}
 ::: {.fragment .fade-left}
-### Le résultat final
+### {{< i18n-key "final_result" >}}
 
-Grâce à sa stratégie de tests à trois niveaux :
+{{< i18n-key "thanks_to_strategy" >}}
 :::
 
 ::: {.fragment .fade-left}
-- Pierrot a livré une application robuste
+- {{< i18n-key "delivered_robust" >}}
 
-- Son client est satisfait
+- {{< i18n-key "client_satisfied" >}}
 
-- Les modifications futures seront plus sereines
+- {{< i18n-key "future_modifications" >}}
 :::
 
 ::: {.fragment .fade-left}
-Et sa cuisine est parfaitement fonctionnelle !
+{{< i18n-key "kitchen_functional" >}}
 :::
 :::
 ::::
 
-## La cuisine de Pierrot
+## {{< i18n-key "pierrot_kitchen" >}}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -778,7 +786,7 @@ Et sa cuisine est parfaitement fonctionnelle !
 :::
 
 ::: {.column width="55%"}
-### Merci
+### {{< i18n-key "thank_you" >}}
 
 <a href="https://arthurdata.github.io/rencontresR2025" target="_blank">🔗 arthurdata.github.io/rencontresR2025</a>
 :::
