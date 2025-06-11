@@ -1,5 +1,4 @@
 project:
-  title: "Tocomplete"
-
-
-
+  title: Testing a Shiny Application
+  resources:
+    - assets/i18n/translations.yml
