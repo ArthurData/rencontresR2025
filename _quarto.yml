@@ -1,4 +1,6 @@
 project:
-  title: Testing a Shiny Application
+  output-dir: _slides
   resources:
     - assets/i18n/translations.yml
+    - assets/ground.html
+    - custom.scss
