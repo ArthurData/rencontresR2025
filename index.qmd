@@ -7,11 +7,10 @@ format:
       {{< i18n-select choices="fr:Français, en:English" selected="fr" >}}
     theme: custom.scss
     slideNumber: false
-    embed-resources: true
     i18n:
       defaultLocale: "fr"
       dictionaryPath:
-        translations.yml
+        assets/i18n/translations.yml
 chalkboard: false
 author: <a href="https://arthurdata.github.io/rencontresR2025" target="_blank">🔗 arthurdata.github.io/rencontresR2025</a>
 include-before-body: assets/ground.html
